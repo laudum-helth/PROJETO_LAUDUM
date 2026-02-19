@@ -5,45 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laudum Health - Telerradiologia</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f7f6; color: #333; }
+        /* Fundo Animado Fluido */
+        body { 
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            text-align: center; 
+            color: #333;
+            background: linear-gradient(-45deg, #e3f2fd, #bbdefb, #e1f5fe, #f4f7f6);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efeito de Vidro no Container */
+        .container { 
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .logo { max-width: 200px; margin-bottom: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
         
-        /* Configuração do formulário escondido */
-        #container-formulario {
-            display: none; 
-            margin-top: 30px;
-            width: 100%;
-            animation: fadeIn 0.5s;
-        }
+        h1 { color: #004a87; font-weight: 700; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .container { padding: 50px; }
-        .logo { max-width: 200px; margin-bottom: 20px; }
-        h1 { color: #004a87; }
         .btn-group { margin-top: 30px; }
+        
         .btn { 
             display: inline-block; 
-            padding: 15px 30px; 
+            padding: 15px 35px; 
             margin: 10px; 
             font-size: 18px; 
             color: white; 
-            background-color: #004a87; 
+            background: #004a87; 
             text-decoration: none; 
-            border-radius: 8px;
-            transition: 0.3s;
+            border-radius: 50px; /* Botão mais arredondado e moderno */
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            box-shadow: 0 4px 15px rgba(0, 74, 135, 0.3);
         }
-        .btn:hover { background-color: #00335e; }
-        .btn-alt { background-color: #25D366; } 
+
+        .btn:hover { 
+            background: #00335e; 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 74, 135, 0.4);
+        }
+
+        /* Configuração do formulário escondido */
+        #container-formulario {
+            display: none; 
+            margin-top: 40px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        iframe {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .badges { margin-top: 50px; font-size: 14px; color: #555; }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="logo.png.png" alt="Laudum Health Logo" class="logo">
+        
         <h1>Bem-vindo à Laudum Health</h1>
         <p>SaaS de Telerradiologia para Diagnósticos Odontológicos de Precisão.</p>
 
@@ -57,16 +100,14 @@
                     width="100%" 
                     height="800px" 
                     frameborder="0" 
-                    style="border:none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    style="border:none;">
             </iframe>
         </div>
 
-        <p style="margin-top: 40px; font-size: 14px;">
-            Startup vinculada ao programa <strong>Mete-marcha do ELab FEA-USP</strong>
-        </p>
-        <p style="font-size: 14px;">
-            Startup selecionada pelo <strong>Sebrae Startups</strong> | Nível Ouro de Maturidade
-        </p>
+        <div class="badges">
+            <p>🚀 Startup vinculada ao <strong>Mete-marcha do ELab FEA-USP</strong></p>
+            <p>🏆 Selecionada pelo <strong>Sebrae Startups</strong> | Nível Ouro de Maturidade</p>
+        </div>
     </div>
 
     <script>
