@@ -3,123 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laudum Health | IA em Radiologia</title>
+    <title>Laudum Health - Telerradiologia</title>
     <style>
-        :root {
-            --azul-marinho: #001e3c; 
-            --ciano-tech: #00bcd4;
-        body {
-            margin: 0;
-            padding-top: 80px; 
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--azul-marinho);
-            color: white;
-            overflow-x: hidden;
-        }
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--azul-marinho);
-            color: white;
-            overflow-x: hidden;
-        }
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--azul-marinho);
-            color: white;
-            min-height: 100vh;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 10px 0;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--branco-vidro);
-            z-index: 1000;
-        }
-
-        .logo { display: flex; align-items: center; gap: 10px; }
-        .logo img { height: 50px; }
-
-        header a { color: white; text-decoration: none; font-weight: 500; margin: 0 15px; }
-        header a:hover { color: var(--ciano-tech); }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #083d56 0%, #001524 100%);
-        }
-
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.3rem; color: var(--ciano-tech); max-width: 700px; }
-
-        .btn {
-            margin-top: 30px;
-            padding: 15px 40px;
-            background-color: var(--ciano-tech);
-            color: var(--azul-marinho);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f7f6; color: #333; }
+        .container { padding: 50px; }
+        .logo { max-width: 200px; margin-bottom: 20px; }
+        h1 { color: #004a87; }
+        .btn-group { margin-top: 30px; }
+        .btn { 
+            display: inline-block; 
+            padding: 15px 30px; 
+            margin: 10px; 
+            font-size: 18px; 
+            color: white; 
+            background-color: #004a87; 
+            text-decoration: none; 
+            border-radius: 8px;
             transition: 0.3s;
         }
+        .btn:hover { background-color: #00335e; }
+        .btn-alt { background-color: #25D366; } /* Cor do WhatsApp para o suporte */
     </style>
 </head>
 <body>
+    <div class="container">
+        <img src="logo.png.png" alt="Laudum Health Logo" class="logo">
+        
+        <h1>Bem-vindo à Laudum Health</h1>
+        <p>SaaS de Telerradiologia para Diagnósticos Odontológicos de Precisão.</p>
 
-    <header>
-        <div class="logo">
-            <img src="circulo.png" alt="Laudum Health">
-            <span><strong>LAUDUM</strong> HEALTH</span>
-        </div>
-        <nav>
-            <a href="#">Sobre</a>
-            <a href="#">Serviços</a>
-            <a href="#">Especialidades</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Inovação em Diagnóstico</h1>
-        <p>Plataforma SaaS de teleradiologia com Inteligência Artificial baseada em pesquisa acadêmica FORP-USP.</p>
-        <a href="#" class="btn">Conhecer Soluções</a>
-        <section id="sobre" style="padding: 100px 20px; background-color: #001524; color: white; text-align: center; border-top: 1px solid rgba(0,188,212,0.2);">
-        <div style="max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 50px; border-radius: 30px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+        <div class="btn-group">
+            <a href="cadastro.html" class="btn">Agendar Novo Exame</a>
             
-            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-bottom: 30px;">
-                <img src="<div style="background: white; color: #001e3c; padding: 5px 15px; border-radius: 5px; font-weight: bold; font-family: serif; font-size: 20px; letter-spacing: 2px;">
-    USP
-</div>
-                <div style="font-size: 40px; color: #00bcd4;">🧬</div>
-            </div>
-
-            <h2 style="font-size: 2.8rem; color: #00bcd4; margin-bottom: 25px; letter-spacing: 1px;">Ciência e Tecnologia</h2>
-            
-            <p style="font-size: 1.25rem; line-height: 1.9; text-align: justify; color: rgba(255,255,255,0.95); margin-bottom: 0;">
-                A <strong style="color: #00bcd4;">Laudum Health</strong> é uma empresa com <strong style="border-bottom: 2px solid #00bcd4;">DNA USP</strong>, nascida da excelência acadêmica da <strong>FORP-USP</strong>. 
-                Unimos o rigor da pesquisa científica à inovação tecnológica para oferecer uma plataforma SaaS de teleradiologia de alta precisão. 
-                Nossa Inteligência Artificial foi desenvolvida para otimizar o diagnóstico odontológico, garantindo agilidade e segurança baseada em evidências.
-            </p>
+            <a href="visualizador.html" class="btn">Acessar Laudos e Imagens</a>
         </div>
-    </section>
 
-    <section id="sobre" style="padding: 100px 20px; background-color: #001524; color: white; text-align: center;">
-        <div style="max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px);">
-            <h2 style="font-size: 2.5rem; color: #00bcd4; margin-bottom: 30px;">Ciência e Tecnologia</h2>
-            <p style="font-size: 1.2rem; line-height: 1.8; text-align: justify; opacity: 0.9;">
-                A <strong>Laudum Health</strong> nasce da necessidade de unir a precisão do diagnóstico acadêmico à agilidade que as clínicas odontológicas modernas exigem. 
-                Desenvolvida dentro do ambiente de excelência da <strong>FORP-USP</strong>, nossa inteligência artificial auxilia na triagem e análise de imagens radiográficas.
-            </p>
-        </div>
-    </section>
-
+        <p style="margin-top: 40px; font-size: 14px;">
+            Startup vinculada à <strong>FORP-USP</strong> | Selo DNA USP em processamento.
+        </p>
+    </div>
 </body>
+</html>
