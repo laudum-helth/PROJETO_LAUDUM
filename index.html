@@ -37,6 +37,16 @@
 
         .logo 
         .logotipo {
+    width: 150px; /* Tamanho menor e mais elegante */
+    height: 150px; /* Mantém a proporção para um círculo perfeito */
+    margin-bottom: 20px;
+    border-radius: 50%; /* Recorta o quadrado branco, deixando apenas o círculo */
+    object-fit: cover; /* Garante que a logo centralize sem esticar */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave para destacar do fundo fluido */
+}
     * Esta é a linha que cria o círculo */
     ajuste-do-objeto: cover; /* Garante que a logo não distorça */
     filtro: sombra projetada(0 2px 4px rgba(0,0,0,0,1));
