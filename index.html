@@ -3,21 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laudum Health - Telerradiologia</title>
-    <style>
-        /* Fundo Animado Fluido */
-        body 
-        
-       <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
             --primary-green: #27ae60;
             --light-green: #e8f5e9;
-            --dark-blue: #1a2b3c;
+            --logo-blue: #1a2b3c; /* Tom azul da sua logo */
             --text-gray: #5a6b7d;
         }
 
@@ -34,12 +24,19 @@
             align-items: center;
             padding: 20px 8%;
             background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
+        /* Logo Laudum.health */
         .logo {
             font-weight: bold;
-            font-size: 24px;
-            color: var(--dark-blue);
+            font-size: 26px;
+            color: var(--logo-blue);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-green);
         }
 
         nav a {
@@ -54,13 +51,18 @@
             color: var(--primary-green);
         }
 
-        .btn-register {
+        .btn-whatsapp {
             background-color: var(--primary-green);
             color: white;
             padding: 10px 25px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #219150;
         }
 
         /* Seção Principal (Hero) */
@@ -80,7 +82,7 @@
 
         .hero-content h1 {
             font-size: 48px;
-            color: var(--dark-blue);
+            color: var(--logo-blue);
             line-height: 1.2;
             margin-bottom: 20px;
         }
@@ -91,11 +93,10 @@
             margin-bottom: 30px;
         }
 
-        /* Abas/Botões de Ação Rápida */
+        /* Botões de Ação */
         .action-buttons {
             display: flex;
             gap: 15px;
-            margin-top: 30px;
         }
 
         .btn-action {
@@ -105,12 +106,12 @@
             font-weight: bold;
             font-size: 15px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .btn-primary {
             background-color: var(--primary-green);
             color: white;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
         }
 
         .btn-outline {
@@ -121,84 +122,54 @@
 
         .btn-action:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        /* Imagem e Elementos Decorativos */
+        /* Imagem com Borda Azul da Logo */
         .hero-image {
             flex: 1;
             display: flex;
             justify-content: center;
-            position: relative;
         }
 
         .main-img {
-            width: 80%;
+            width: 85%;
             border-radius: 30px;
-            z-index: 2;
+            border: 8px solid var(--logo-blue); /* Borda no tom da logo */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            object-fit: cover;
         }
 
-        /* Card Flutuante */
-        .floating-card {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Laudum<span style="color:var(--primary-green)">.health</span></div>
+        <a href="index.html" class="logo">Laudum<span>.health</span></a>
+        
         <nav>
             <a href="index.html">Home</a>
-            <a href="seguranca.html">Compliance</a>
-            <a href="#especialidades">Especialidades</a>
+            <a href="seguranca.html">Segurança</a>
             <a href="#contato">Contato</a>
         </nav>
-        <a href="https://wa.me/5516936182292" class="btn-register">Agendar Agora</a>
+        
+        <a href="https://wa.me/5516936182292" class="btn-whatsapp">Fale Conosco</a>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Diagnóstico Digital <br><span style="color:var(--primary-green)">Rápido e Preciso</span></h1>
-            <p>Transformamos a gestão de exames odontológicos com tecnologia cloud-native e conformidade rigorosa com a ANVISA e ANS.</p>
+            <h1>Diagnóstico Digital <br><span style="color:var(--primary-green)">Rápido e Seguro</span></h1>
+            <p>Sua clínica em total conformidade com a ANVISA e ANS. Gestão de laudos em nuvem com tecnologia de ponta.</p>
             
             <div class="action-buttons">
-                <a href="#" class="btn-action btn-primary">Acessar Laudos</a>
-                <a href="https://wa.me/5516936182292" class="btn-action btn-outline">Fale Conosco</a>
+                <a href="https://wa.me/5516936182292" class="btn-action btn-primary">Agendar Demonstração</a>
+                <a href="seguranca.html" class="btn-action btn-outline">Ver Base Legal</a>
             </div>
         </div>
 
         <div class="hero-image">
-            <img src="https://via.placeholder.com/400x500/f0f0f0/27ae60?text=Laudum+Health" alt="Serviços Médicos" class="main-img">
-            
-            <div class="floating-card">
-                <div style="background:var(--light-green); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center;">
-                    🩺
-                </div>
-                <div>
-                    <div style="font-weight:bold; font-size:14px;">1520+</div>
-                    <div style="font-size:12px; color:var(--text-gray);">Clientes Ativos</div>
-                </div>
-            </div>
+            <img src="https://via.placeholder.com/450x550/f9f9f9/1a2b3c?text=Laudum+Software" alt="Interface Laudum.health" class="main-img">
         </div>
     </section>
 
 </body>
-</html>
-</body>
-<footer style="padding: 20px; text-align: center; border-top: 1px solid #eee; font-family: sans-serif;">
-    <p>© 2026 Laudum.health - Tecnologia em conformidade com 
-        <a href="seguranca.html" style="color: #27ae60; text-decoration: none; font-weight: bold;">ANVISA, ANS e LGPD</a>.
-    </p>
-</footer>
 </html>
