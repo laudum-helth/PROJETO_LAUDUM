@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laudum.health - Diagnóstico Digital</title>
+    <title>Laudum.health - Inovação e Diagnóstico</title>
     <style>
         :root {
             --verde-primario: #27ae60;
@@ -19,6 +19,7 @@
             background-color: #ffffff;
             color: var(--logo-azul);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Menu Superior */
@@ -44,101 +45,85 @@
             text-decoration: none;
             color: var(--texto-cinza);
             font-weight: 500;
-            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--verde-primario);
-        }
-
-        /* Seção Principal */
+        /* Seção Principal (Hero) */
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 60px 8%;
-            min-height: 80vh;
+            min-height: 70vh;
             background: radial-gradient(circle at 90% 50%, var(--verde-claro) 0%, white 55%);
         }
 
-        .hero-content {
-            flex: 1;
-            max-width: 550px;
-        }
+        .hero-content { flex: 1; max-width: 500px; }
+        .hero-content h1 { font-size: 48px; line-height: 1.2; margin-bottom: 20px; }
 
-        .hero-content h1 {
-            font-size: 48px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--logo-azul);
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            color: var(--texto-cinza);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* Botões de Ação */
-        .action-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
+        /* Botões */
         .btn {
             padding: 15px 25px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            text-align: center;
             display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-agendar { background-color: var(--verde-primario); color: white; margin-right: 15px; }
+        .btn-exames { border: 2px solid var(--logo-azul); color: var(--logo-azul); }
+
+        .hero-image { flex: 1; display: flex; justify-content: center; }
+        .main-img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 20px;
+            border: 10px solid var(--logo-azul);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            object-fit: contain;
         }
 
-        .btn-agendar {
-            background-color: var(--verde-primario);
+        /* Diferenciais */
+        .card-diferencial {
+            flex: 1; 
+            min-width: 250px; 
+            padding: 20px; 
+            border-radius: 15px; 
+            background: var(--verde-claro);
+        }
+
+        /* Seção Sobre Nós */
+        .sobre-secao { padding: 80px 15%; line-height: 1.8; background-color: #fcfcfc; }
+        
+        /* Rodapé / Footer */
+        footer {
+            background-color: var(--logo-azul);
             color: white;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            padding: 40px 8%;
+            text-align: center;
         }
 
-        .btn-exames {
-            background-color: white;
-            border: 2px solid var(--logo-azul);
-            color: var(--logo-azul);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        /* Container da Imagem */
-        .hero-image {
-            flex: 1;
+        .footer-logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-left: 40px;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
 
-        .main-img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 20px;
-            border: 10px solid var(--logo-azul); /* Borda azul marinho */
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            object-fit: contain;
-            background-color: white;
+        .badge-startup {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        @media (max-width: 992px) {
-            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
-            .hero-image { padding-left: 0; margin-top: 40px; }
-            .action-buttons { justify-content: center; }
+        @media (max-width: 768px) {
+            .hero, .sobre-info { flex-direction: column; text-align: center; }
+            .hero-image { margin-top: 30px; }
+            header { padding: 15px 5%; }
+            nav { display: none; }
         }
     </style>
 </head>
@@ -150,6 +135,7 @@
         </a>
         <nav>
             <a href="index.html">Home</a>
+            <a href="#sobre">Sobre Nós</a>
             <a href="seguranca.html">Segurança</a>
             <a href="https://wa.me/5516936182292">Suporte</a>
         </nav>
@@ -160,18 +146,65 @@
         <div class="hero-content">
             <h1>Diagnóstico Digital <br><span style="color:var(--verde-primario)">Rápido e Seguro</span></h1>
             <p>Sua clínica em total conformidade com a ANVISA e ANS. Gestão inteligente de laudos em nuvem desenvolvida na USP Ribeirão Preto.</p>
-            
             <div class="action-buttons">
                 <a href="https://forms.zohopublic.com/contatolaudum1/form/ClientDetails/formperma/Imq80jL_qwL9jgecIMLOLyEuje3BYVyu231fb9zbP2Q" target="_blank" class="btn btn-agendar">Agende uma Consulta</a>
-                
                 <a href="#" class="btn btn-exames">Veja seus Exames</a>
             </div>
         </div>
-
         <div class="hero-image">
-            <img src="pg.inicial.png" alt="Plataforma Laudum Health" class="main-img">
+            <img src="pg.inicial.png" alt="Interface Laudum" class="main-img">
         </div>
     </section>
+
+    <section style="padding: 60px 8%; background-color: #ffffff; text-align: center;">
+        <h2 style="color: var(--logo-azul); margin-bottom: 40px;">Por que escolher a Laudum?</h2>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+            <div class="card-diferencial">
+                <h3 style="color: var(--verde-primario);">Nuvem Segura</h3>
+                <p style="color: var(--texto-cinza);">Acesso aos seus laudos e imagens DICOM de qualquer lugar, com backup automático por 20 anos.</p>
+            </div>
+            <div class="card-diferencial">
+                <h3 style="color: var(--verde-primario);">Conformidade Total</h3>
+                <p style="color: var(--texto-cinza);">Plataforma 100% alinhada com as normas da ANVISA (RDC 50) e ANS.</p>
+            </div>
+            <div class="card-diferencial">
+                <h3 style="color: var(--verde-primario);">DNA Acadêmico</h3>
+                <p style="color: var(--texto-cinza);">Tecnologia desenvolvida no ecossistema de inovação da USP Ribeirão Preto.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre-secao">
+        <h1 style="text-align: center; color: var(--verde-primario);">Nossa História</h1>
+        <p>
+            A <strong>Laudum.health</strong> nasceu da união entre a excelência clínica e a inovação tecnológica. 
+            Fundada por pesquisadores da <strong>FORP-USP</strong>, nossa missão é democratizar o acesso ao diagnóstico 
+            digital de alta precisão.
+        </p>
+        <div style="margin-top: 40px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap;" class="sobre-info">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="color: var(--verde-primario);">Inovação com Propósito</h2>
+                <p>
+                    Como uma startup participante do programa <strong>Mete-marcha (ELab FEA-USP)</strong>, estamos na vanguarda da telerradiologia odontológica brasileira. 
+                    Nossa solução SaaS foi desenhada para resolver a desorganização interna e garantir a segurança jurídica 
+                    que as clínicas precisam.
+                </p>
+            </div>
+            <img src="circulo.png" style="width: 200px; height: auto; border-radius: 50%;">
+        </div>
+    </section>
+
+    <footer>
+        <p style="margin-bottom: 20px; font-weight: bold;">Laudum.health - Transformando a Radiologia Odontológica</p>
+        <div class="footer-logos">
+            <div class="badge-startup">🚀 Startup Selecionada: <strong>Sebrae Startups</strong></div>
+            <div class="badge-startup">🎓 Ecossistema: <strong>ELab FEA-USP</strong></div>
+            <div class="badge-startup">📍 Origem: <strong>FORP-USP Ribeirão Preto</strong></div>
+        </div>
+        <p style="margin-top: 30px; font-size: 12px; opacity: 0.6;">
+            © 2026 Laudum.health. Todos os direitos reservados. Em conformidade com LGPD, ANVISA e ANS.
+        </p>
+    </footer>
 
 </body>
 </html>
