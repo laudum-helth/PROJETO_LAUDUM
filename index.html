@@ -6,20 +6,22 @@
     <title>Laudum.health - Diagnóstico Digital</title>
     <style>
         :root {
-            --primary-green: #27ae60;
-            --light-green: #e8f5e9;
-            --logo-blue: #1a2b3c;
-            --text-gray: #5a6b7d;
+            --verde-primario: #27ae60;
+            --verde-claro: #e8f5e9;
+            --logo-azul: #1a2b3c;
+            --texto-cinza: #5a6b7d;
         }
 
         body {
             margin: 0;
+            padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
-            color: var(--logo-blue);
+            color: var(--logo-azul);
+            overflow-x: hidden;
         }
 
-        /* Navegação Superior */
+        /* Menu Superior */
         header {
             display: flex;
             justify-content: space-between;
@@ -32,53 +34,31 @@
             z-index: 1000;
         }
 
-        /* Estilização da Logo */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
         .logo-img {
-            height: 60px; /* Tamanho otimizado para sua logo circulo.png */
+            height: 60px;
             width: auto;
-            transition: transform 0.3s;
-        }
-
-        .logo-img:hover {
-            transform: scale(1.05);
         }
 
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: var(--text-gray);
+            color: var(--texto-cinza);
             font-weight: 500;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: var(--primary-green);
+            color: var(--verde-primario);
         }
 
-        .btn-whatsapp-top {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        /* Seção Hero */
+        /* Seção Principal */
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 60px 8%;
-            min-height: 75vh;
-            background: radial-gradient(circle at 90% 50%, var(--light-green) 0%, white 55%);
+            min-height: 80vh;
+            background: radial-gradient(circle at 90% 50%, var(--verde-claro) 0%, white 55%);
         }
 
         .hero-content {
@@ -87,106 +67,109 @@
         }
 
         .hero-content h1 {
-            font-size: 52px;
-            color: var(--logo-blue);
-            line-height: 1.1;
-            margin-bottom: 25px;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--logo-azul);
         }
 
         .hero-content p {
-            color: var(--text-gray);
-            font-size: 19px;
+            font-size: 18px;
+            color: var(--texto-cinza);
+            margin-bottom: 30px;
             line-height: 1.6;
-            margin-bottom: 35px;
         }
 
         /* Botões de Ação */
         .action-buttons {
             display: flex;
+            flex-wrap: wrap;
             gap: 15px;
         }
 
-        .btn-action {
-            padding: 16px 30px;
-            border-radius: 12px;
+        .btn {
+            padding: 15px 25px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.3s ease;
             text-align: center;
+            display: inline-block;
         }
 
-        .btn-primary {
-            background-color: var(--primary-green);
+        .btn-agendar {
+            background-color: var(--verde-primario);
             color: white;
             box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
         }
 
-        .btn-outline {
+        .btn-exames {
             background-color: white;
-            border: 2px solid var(--primary-green);
-            color: var(--primary-green);
+            border: 2px solid var(--logo-azul);
+            color: var(--logo-azul);
         }
 
-        .btn-action:hover {
+        .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        /* Imagem com Borda Azul Marinho */
+        /* Container da Imagem */
         .hero-image {
             flex: 1;
             display: flex;
             justify-content: center;
+            align-items: center;
+            padding-left: 40px;
         }
 
         .main-img {
-            width: 85%;
-            max-width: 500px;
-            border-radius: 40px;
-            border: 10px solid var(--logo-blue);
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 20px;
+            border: 10px solid var(--logo-azul); /* Borda azul marinho */
             box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            object-fit: cover;
+            object-fit: contain;
+            background-color: white;
         }
 
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 40px; }
-            .hero-content { margin-bottom: 40px; }
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
+            .hero-image { padding-left: 0; margin-top: 40px; }
             .action-buttons { justify-content: center; }
-            header { padding: 15px 5%; }
-            nav { display: none; } /* Esconde menu no mobile para simplificar */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo-container">
+        <a href="index.html">
             <img src="circulo.png" alt="Laudum.health Logo" class="logo-img">
         </a>
-        
         <nav>
             <a href="index.html">Home</a>
-            <a href="seguranca.html">Segurança & Compliance</a>
-            <a href="https://wa.me/5516936182292">Contato</a>
+            <a href="seguranca.html">Segurança</a>
+            <a href="https://wa.me/5516936182292">Suporte</a>
         </nav>
-        
-        <a href="https://wa.me/5516936182292" class="btn-whatsapp-top">Fale Conosco</a>
+        <a href="https://wa.me/5516936182292" class="btn" style="background: var(--verde-primario); color: white; padding: 10px 20px;">Fale Conosco</a>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Diagnóstico Digital <br><span style="color:var(--primary-green)">Rápido e Seguro</span></h1>
-            <p>Sua clínica em total conformidade com a ANVISA e ANS. Gestão inteligente de laudos em nuvem com tecnologia desenvolvida na USP Ribeirão Preto.</p>
+            <h1>Diagnóstico Digital <br><span style="color:var(--verde-primario)">Rápido e Seguro</span></h1>
+            <p>Sua clínica em total conformidade com a ANVISA e ANS. Gestão inteligente de laudos em nuvem desenvolvida na USP Ribeirão Preto.</p>
             
             <div class="action-buttons">
-                <a href="https://wa.me/5516936182292" class="btn-action btn-primary">Agendar Demonstração</a>
-                <a href="seguranca.html" class="btn-action btn-outline">Base Legal (Compliance)</a>
+                <a href="https://forms.zohopublic.com/contatolaudum1/form/ClientDetails/formperma/Imq88jl_qwL9jgecIMLOLyEuje3BYvyu231fb9zbP2Q" target="_blank" class="btn btn-agendar">Agende uma Consulta</a>
+                
+                <a href="#" class="btn btn-exames">Veja seus Exames</a>
             </div>
         </div>
 
         <div class="hero-image">
-            <img src="https://via.placeholder.com/500x600/f9f9f9/1a2b3c?text=Laudum+Health+SaaS" alt="Interface Laudum.health" class="main-img">
+            <img src="pg.inicial.png" alt="Plataforma Laudum Health" class="main-img">
         </div>
     </section>
 
