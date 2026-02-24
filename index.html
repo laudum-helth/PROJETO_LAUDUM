@@ -6,177 +6,195 @@
     <title>Laudum Health - Telerradiologia</title>
     <style>
         /* Fundo Animado Fluido */
-        body { 
+        body 
+        
+       <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-green: #27ae60;
+            --light-green: #e8f5e9;
+            --dark-blue: #1a2b3c;
+            --text-gray: #5a6b7d;
+        }
+
+        body {
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            text-align: center; 
-            color: #333;
-            background: linear-gradient(-45deg, #e3f2fd, #bbdefb, #e1f5fe, #f4f7f6);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Barra de Navegação Superior */
+        /* Navegação Superior */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 5%;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        /* Logo Circular no Canto Esquerdo */
-        .logotipo {
-            width: 60px; 
-            height: 60px;
-            border-radius: 50%; /* Remove o quadrado branco */
-            object-fit: cover;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 8%;
+            background: white;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--dark-blue);
         }
 
-        .nav-item {
+        nav a {
+            margin: 0 15px;
             text-decoration: none;
-            color: #004a87;
-            font-weight: 600;
-            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
             transition: 0.3s;
         }
 
-        .nav-item:hover {
-            color: #00335e;
+        nav a:hover {
+            color: var(--primary-green);
         }
 
-        /* Efeito de Vidro no Container Central */
-        .container { 
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            max-width: 800px;
-            margin: 30px auto;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .btn-register {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        h1 { color: #004a87; font-weight: 700; }
+        /* Seção Principal (Hero) */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            min-height: 70vh;
+            background: radial-gradient(circle at 90% 50%, var(--light-green) 0%, white 50%);
+        }
 
-        .btn { 
-            display: inline-block; 
-            padding: 15px 35px; 
-            margin: 10px; 
-            font-size: 18px; 
-            color: white; 
-            background: #004a87; 
-            text-decoration: none; 
-            border-radius: 50px;
+        .hero-content {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            color: var(--dark-blue);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: var(--text-gray);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Abas/Botões de Ação Rápida */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
             transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 4px 15px rgba(0, 74, 135, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .btn:hover { 
-            background: #00335e; 
-            transform: translateY(-2px);
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
         }
 
-        /* Seção do Formulário Zoho */
-        #container-formulario {
-            display: none; 
-            margin-top: 40px;
-            width: 100%;
-            animation: fadeIn 0.8s ease-out;
+        .btn-outline {
+            background-color: white;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .btn-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        iframe {
+        /* Imagem e Elementos Decorativos */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .main-img {
+            width: 80%;
+            border-radius: 30px;
+            z-index: 2;
+        }
+
+        /* Card Flutuante */
+        .floating-card {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            background: white;
+            padding: 15px 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
-        .badges { margin-top: 40px; font-size: 13px; color: #555; line-height: 1.6; }
     </style>
 </head>
+<body>
+
     <header>
-        <img src="logo.png.png" alt="Laudum Health" class="logotipo">
-        <nav class="nav-links">
-            <a href="#sobre" class="nav-item">Sobre</a>
-            <a href="#especialidades" class="nav-item">Especialidades</a>
-            <a href="#contato" class="nav-item">Contato</a>
+        <div class="logo">Laudum<span style="color:var(--primary-green)">.health</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="seguranca.html">Compliance</a>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#contato">Contato</a>
         </nav>
+        <a href="https://wa.me/5516936182292" class="btn-register">Agendar Agora</a>
     </header>
-    <div class="btn-group">
-    <a href="cadastro.html" class="btn">Agendar Novo Exame</a>
-    <a href="visualizador.html" class="btn">Acessar Laudos e Imagens</a>
-    <a href="contato.html" class="btn">Fale Conosco</a>
-</div>
-    <section id="contato" style="text-align: center; padding: 40px; font-family: sans-serif;">
-    <div style="max-width: 600px; margin: auto; border: 1px solid #27ae60; border-radius: 10px; padding: 20px; background-color: #fff;">
-        <h3 style="color: #2c3e50;">Fale Conosco</h3>
-        <p>Tem dúvidas sobre como organizar sua clínica com a Laudum?</p>
-        
-        <a href="https://wa.me/5516936182292" target="_blank" style="background-color: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px;">
-            Chamar no WhatsApp
-        </a>
-        
-        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
-            Atendimento direto: (16) 93618-2292
-        </p>
-    </div>
-</section>
 
-    <div class="container">
-        <h1>Bem-vindo à Laudum Health</h1>
-        <p>SaaS de Telerradiologia para Diagnósticos Odontológicos de Precisão.</p>
-
-        <div class="btn-group">
-            <button onclick="mostrarFormulario()" class="btn">Agendar Novo Exame</button>
-            <a href="visualizador.html" class="btn">Acessar Laudos e Imagens</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Diagnóstico Digital <br><span style="color:var(--primary-green)">Rápido e Preciso</span></h1>
+            <p>Transformamos a gestão de exames odontológicos com tecnologia cloud-native e conformidade rigorosa com a ANVISA e ANS.</p>
+            
+            <div class="action-buttons">
+                <a href="#" class="btn-action btn-primary">Acessar Laudos</a>
+                <a href="https://wa.me/5516936182292" class="btn-action btn-outline">Fale Conosco</a>
+            </div>
         </div>
 
-        <div id="container-formulario">
-            <iframe src="https://forms.zohopublic.com/contatolaudum1/form/ClientDetails/formperma/Imq80jL_qwL9jgecIMLOLyEuje3BYVyu231fb9zbP2Q" 
-                    width="100%" 
-                    height="800px" 
-                    frameborder="0" 
-                    style="border:none;">
-            </iframe>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x500/f0f0f0/27ae60?text=Laudum+Health" alt="Serviços Médicos" class="main-img">
+            
+            <div class="floating-card">
+                <div style="background:var(--light-green); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center;">
+                    🩺
+                </div>
+                <div>
+                    <div style="font-weight:bold; font-size:14px;">1520+</div>
+                    <div style="font-size:12px; color:var(--text-gray);">Clientes Ativos</div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="badges">
-            <p>🚀 Startup vinculada ao programa <strong>Mete-marcha do ELab FEA-USP</strong></p>
-            <p>🏆 Selecionada pelo <strong>Sebrae Startups</strong> | Nível Ouro de Maturidade</p>
-        </div>
-    </div>
-
-    <script>
-    function mostrarFormulario() {
-        var form = document.getElementById("container-formulario");
-        form.style.display = "block";
-        form.scrollIntoView({ behavior: 'smooth' });
-    }
-    </script>
+</body>
+</html>
 </body>
 <footer style="padding: 20px; text-align: center; border-top: 1px solid #eee; font-family: sans-serif;">
     <p>© 2026 Laudum.health - Tecnologia em conformidade com 
